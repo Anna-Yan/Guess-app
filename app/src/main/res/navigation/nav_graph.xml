@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/loginFragment">
+
+    <fragment android:id="@+id/gameFragment" android:name="com.example.guassapp_byannazaqaryan.fragment.GameFragment"
+              android:label="fragment_game" tools:layout="@layout/fragment_game">
+        <action android:id="@+id/action_gameFragment_to_winFragment" app:destination="@id/winFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+        <action android:id="@+id/action_gameFragment_to_loseFragment" app:destination="@id/loseFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+        <action android:id="@+id/action_gameFragment_to_accountFragment" app:destination="@id/accountFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment android:id="@+id/winFragment" android:name="com.example.guassapp_byannazaqaryan.fragment.WinFragment"
+              android:label="WinFragment">
+        <action android:id="@+id/action_winFragment_to_accountFragment" app:destination="@id/accountFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment android:id="@+id/loseFragment" android:name="com.example.guassapp_byannazaqaryan.fragment.LoseFragment"
+              android:label="LoseFragment">
+        <action android:id="@+id/action_loseFragment_to_accountFragment" app:destination="@id/accountFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment android:id="@+id/accountFragment"
+              android:name="com.example.guassapp_byannazaqaryan.fragment.AccountFragment"
+              android:label="fragment_account" tools:layout="@layout/fragment_account"/>
+
+    <fragment android:id="@+id/loginFragment" android:name="com.example.guassapp_byannazaqaryan.fragment.LoginFragment"
+              android:label="fragment_login" tools:layout="@layout/fragment_login">
+        <argument android:name="passwordChanged"
+                  app:argType="boolean"
+                  android:defaultValue="false"/>
+        <action android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+                app:destination="@id/forgotPasswordFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+        <action android:id="@+id/action_loginFragment_to_gameFragment" app:destination="@id/gameFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+
+        <action android:id="@+id/action_loginFragment_to_forgotPasswordFragment2"
+                app:destination="@id/forgotPasswordFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+
+    <fragment android:id="@+id/forgotPasswordFragment"
+              android:name="com.example.guassapp_byannazaqaryan.fragment.ForgotPasswordFragment"
+              android:label="fragment_forgot_password" tools:layout="@layout/fragment_forgot_password">
+        <action android:id="@+id/action_forgotPasswordFragment2_to_loginFragment" app:destination="@id/loginFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+</navigation>
